@@ -1,6 +1,12 @@
-const file=require('./file');
-const http= require('http');
-const server=http.createServer(file.handler);
- console.log(file.text);  
-
-server.listen(4000);
+const express=require('express');
+const app=express();
+app.use((req,res,next)=>{
+  console.log("first middleware");
+  next();
+  
+  
+});
+app.use((req,res,next)=>{
+    console.log("Second middleware");
+  });
+app.listen(3000);
