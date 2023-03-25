@@ -35,13 +35,13 @@ const requestHandler=(req,res)=>{
       req.on('data',(chunk)=>{
       body.push(chunk);
     });
-    return req.on('end',()=>{
+     return req.on('end',()=>{
      const parsedBody=Buffer.concat(body).toString();
-     const message=parsedBody.split('=')[1];
+     const message=parsedBody.split('=')[0];
      fs.writeFile('message.txt',message,error=>{
       res.statusCode=302;
       res.setHeader('Location','/');
-      return res.end();
+     return res.end();
      
      });
       
