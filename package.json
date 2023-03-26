@@ -7,16 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon creatingfilenode.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Subhadeep90/Nodejs.git"
-  },
   "author": "Subhadeep Mitra",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Subhadeep90/Nodejs/issues"
-  },
-  "homepage": "https://github.com/Subhadeep90/Nodejs#readme",
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
