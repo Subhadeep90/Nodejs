@@ -1,0 +1,32 @@
+body{
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+}
+.header{
+    width:100%;
+    height: 3.5rem;
+    background-color: #db9696;
+    padding:0 1.5rem;
+    
+}
+.ulitems{
+    list-style: none;
+    margin: 0;
+    padding:0;
+    display: flex;
+
+}
+.nav{
+    height:100%;
+    display:flex;
+    align-items: center;
+}
+.lilist{
+margin:0 1rem;
+padding:0;
+}
+.lilist a{
+text-decoration: none;
+color:white;
+}
