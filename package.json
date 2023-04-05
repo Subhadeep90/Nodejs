@@ -2,10 +2,10 @@
   "name": "nodefirstfile",
   "version": "1.0.0",
   "description": "Complete nodejs guide",
-  "main": "Group chat Application/groupchatapplication.js",
+  "main": "creatingfilenode.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon Group chat Application/groupchatapplication.js"
+    "start": "nodemon creatingfilenode.js"
   },
   "author": "Subhadeep Mitra",
   "license": "ISC",
