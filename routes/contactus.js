@@ -2,11 +2,8 @@ const express=require('express');
 const router=express.Router();
 const path=require('path');
 const rootDir=require('../util/path')
-router.post('/success',(req,res,next)=>{
-    res.send('<h1>Form successfuly filled</h1>')
-})
+const contactuspagetodisplay=require('../Controllers/product')
+router.post('/success',contactuspagetodisplay.contactusPage);
 
-router.get('/contactus',(req,res,next)=>{
-    res.sendFile(path.join(rootDir,'views','contactus.html'));
-})
+router.get('/contactus',contactuspagetodisplay.contactusPagetoget)
 module.exports=router;
