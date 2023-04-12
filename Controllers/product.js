@@ -1,14 +1,15 @@
 
 const path=require('path');
 const rootDir=require('../util/path')
+const Product=require('../Models/product');
+const fs = require('fs');
 
 exports.getProductPage=(req,res,next)=>{
     res.sendFile(path.join(rootDir,'views','add-product.html'))
   };
   exports.getProduct=(req,res,next)=>{
-
-    console.log(req.body);
-    
+    const product=new Product(req.body.title);
+    product.save();
     res.redirect('/');
     };
   
@@ -23,7 +24,9 @@ exports.getProductPage=(req,res,next)=>{
         res.sendFile(path.join(rootDir,'views','contactus.html'));
     }
     exports.shop=(req,res,next)=>{
-
-        res.sendFile(path.join(rootDir,'views','shop.html'));
         
+      res.sendFile(path.join(rootDir,'views','shop.html'));
+ 
+             
+
       }
