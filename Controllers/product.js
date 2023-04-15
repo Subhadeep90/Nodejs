@@ -12,7 +12,11 @@ exports.getProductPage=(req,res,next)=>{
     product.save();
     res.redirect('/');
     };
-  
+    exports.getProductid=(req,res,next)=>{
+      Product.findByid(prodid,product=>{
+        console.log(prodid);
+      })
+    }
  
     exports.errorpage=(req,res,next)=>{
         res.status(404).sendFile(path.join(rootDir,'views','404.html'));
