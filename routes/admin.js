@@ -6,6 +6,7 @@ const rootDir=require('../util/path')
 
 router.get('/add-product',getproductPagetodisplay.getProductPage);
 router.post('/add-product',getproductPagetodisplay.getProduct);
+router.get('/add-product/:productId',getproductPagetodisplay.getProductid);
 
 
 module.exports = router;
