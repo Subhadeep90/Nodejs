@@ -18,7 +18,8 @@ module.exports=class Products{
     }
     save()
     {
-     const p=path.join(rootDir,'data','products.json');
+    this.id=Math.random().toString();
+    const p=path.join(rootDir,'data','products.json');
      fs.readFile(p,(err,fileContent)=>{
          console.log(err);
      let products=[];
@@ -36,4 +37,14 @@ module.exports=class Products{
     {
         getProducts();
     }
+
+  static findByid(id)
+  {
+      getProductsfromfile(products=>{
+          const product=products.find(p=>p.id===id);
+          console.log(product);
+      })
+  }
+
+
 }
