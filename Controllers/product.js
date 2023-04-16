@@ -2,7 +2,12 @@
 const path=require('path');
 const rootDir=require('../util/path')
 const Product=require('../Models/product');
+const Cart=require('../Models/Cart');
 const fs = require('fs');
+exports.cart=(req,res,next)=>{
+  res.send('<h1>This is the Cart</h1>')
+  
+}
 
 exports.getProductPage=(req,res,next)=>{
     res.sendFile(path.join(rootDir,'views','add-product.html'))
@@ -13,10 +18,14 @@ exports.getProductPage=(req,res,next)=>{
     res.redirect('/');
     };
     exports.getProductid=(req,res,next)=>{
-      Product.findByid(prodid,product=>{
-        console.log(prodid);
+      const prodID=req.body.productId;
+      Product.findByid(prodID,(product)=>{
+        Cart.addProduct(prodID,product.price);
       })
+      res.redirect('/cart');
     }
+    
+    
  
     exports.errorpage=(req,res,next)=>{
         res.status(404).sendFile(path.join(rootDir,'views','404.html'));

@@ -11,11 +11,12 @@
 <body>
  <header class ="header">
       <nav class="nav">
-
           <ul class="ulitems">
               <li class ="lilist"><a href="/">Shop</a></li>
               <li class ="lilist"><a href="/add-product">Add Product</a></li>
               <li class ="lilist"><a href="/contactus">Contact Us</a></li>
+              <li class ="lilist"><a href="add-product/cart">Cart</a></li>
+
 
           </ul>
           
@@ -24,7 +25,7 @@
  </header>  
  <main class="main">
      <form action="/admin/add-product" method="POST">
-         <input type="text" name="title">
+        <input type="text" name="title">
          <button>Add Product</button>
      </form>
      <a href="/add-product/:productId" class="btn btn-outline-primary">Details</a>
