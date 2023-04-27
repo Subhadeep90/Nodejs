@@ -1,19 +1,31 @@
 {
   "name": "nodefirstfile",
   "version": "1.0.0",
-  "description": "Complete nodejs guide",
-  "main": "creatingfilenode.js",
+  "description": "Complete node.js guide",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon creatingfilenode.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Subhadeep90/Nodejs.git"
+  },
   "author": "Subhadeep Mitra",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Subhadeep90/Nodejs/issues"
+  },
+  "homepage": "https://github.com/Subhadeep90/Nodejs#readme",
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.3",
+    "mysql3": "^0.6.0",
+    "mysql4": "^1.7.0"
   }
 }

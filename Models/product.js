@@ -1,49 +1,40 @@
 const products=[];
-
-const fs=require('fs');
+const db=require('../util/database')
+// const fs=require('fs');
 const path=require('path');
 const rootDir=require('../util/path');
-const getProducts =()=>{
-    fs.readFile(p,(err,fileContent)=>{
-        if(err){
-            return [];
-        }
-        return JSON.parse(fileContent);
-     })
-}
+// const getProducts =()=>{
+//     fs.readFile(p,(err,fileContent)=>{
+//         if(err){
+//             return [];
+//         }
+//         return JSON.parse(fileContent);
+//      })
+// }
 module.exports=class Products{
-    constructor(t)
+    constructor(id,title,price,description,iurl)
     {
-     this.title=t;
+        this.id=id;
+        this.title=title;
+        this.price=price;
+        this.description=description;
+        this.imageurl=iurl;
+
     }
     save()
     {
-    this.id=Math.random().toString();
-    const p=path.join(rootDir,'data','products.json');
-     fs.readFile(p,(err,fileContent)=>{
-         console.log(err);
-     let products=[];
-     if(!err)
-    {
-      products=JSON.parse(fileContent);
+    return db.execute('INSERT INTO products(title,price,description,imageurl)VALUES(?,?,?,?)',
+    [this.title,this.price,this.description,this.imageurl]
+    );
     }
-    products.push(this);
-    fs.writeFile(p,JSON.stringify(products),error=>{
-        console.log(error);
-    })
-})
-}
     static fetchALL()
     {
-        getProducts();
+      return db.execute('SELECT * FROM products');
     }
 
   static findByid(id)
   {
-      getProductsfromfile(products=>{
-          const product=products.find(p=>p.id===id);
-          console.log(product);
-      })
+     return db.execute('SELECT  * from products WHERE products.id=?',[id]);
   }
 
 

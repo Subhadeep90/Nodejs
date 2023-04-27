@@ -13,7 +13,7 @@
       <nav class="nav">
           <ul class="ulitems">
               <li class ="lilist"><a href="/">Shop</a></li>
-              <li class ="lilist"><a href="/add-product">Add Product</a></li>
+              <li class ="lilist"><a href="admin/add-product">Add Product</a></li>
               <li class ="lilist"><a href="/contactus">Contact Us</a></li>
               <li class ="lilist"><a href="add-product/cart">Cart</a></li>
 
@@ -26,6 +26,11 @@
  <main class="main">
      <form action="/admin/add-product" method="POST">
         <input type="text" name="title">
+        <input type="number" name="price">
+        <input type="description" name="description">
+        <input type="imageurl" name="imageurl">
+
+
          <button>Add Product</button>
      </form>
      <a href="/add-product/:productId" class="btn btn-outline-primary">Details</a>
