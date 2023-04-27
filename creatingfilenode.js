@@ -1,4 +1,4 @@
-const db=require('./util/database');
+const sequelize=require('./util/database');
 const express=require('express');
 const app=express();
 const path=require('path');
@@ -21,4 +21,8 @@ app.use('/admin',adminroutes);
 //app.use(adminroutes)
 app.use(shoproutes);
 app.use(errorpagetodisplay.errorpage);
- app.listen(5000); 
+sequelize.sync().then((result)=>{
+    app.listen(5000); 
+}).catch((err)=>{
+    console.log(err);
+})
